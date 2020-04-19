@@ -1,0 +1,11 @@
+{
+    "spellright.language": [],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex"
+    ],
+    "files.associations": {
+        "string": "c",
+        "iosfwd": "c"
+    }
+}

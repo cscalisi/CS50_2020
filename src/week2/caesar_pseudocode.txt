@@ -1,0 +1,19 @@
+CS50 week 2 
+
+caesar
+
+pseudocode
+
+----------
+
+- check that program accepts ONE command-line argument and that it only accepts a non-negative integer number
+
+- check that CL argument is only made up of digits (no characters, no spaces)
+
+- check that program accepts a plaintext input
+
+- check that plaintext is actual text 
+
+- iterate over each character of plaintext and transpose to ciphertext
+
+- print out ciphertext
