@@ -10,7 +10,8 @@ typedef struct
 {
     string name;
     int votes;
-} candidate;
+}
+candidate;
 
 // Array of candidates
 candidate candidates[MAX];
@@ -21,9 +22,6 @@ int candidate_count;
 // Function prototypes
 bool vote(string name);
 void print_winner(void);
-
-// Number of voters
-int voter_count;
 
 int main(int argc, string argv[])
 {
@@ -47,7 +45,7 @@ int main(int argc, string argv[])
         candidates[i].votes = 0;
     }
 
-    voter_count = get_int("Number of voters: ");
+    int voter_count = get_int("Number of voters: ");
 
     // Loop over all voters
     for (int i = 0; i < voter_count; i++)
@@ -61,11 +59,6 @@ int main(int argc, string argv[])
         }
     }
 
-    // for (int i = 0; i < candidate_count; i++)
-    //     {
-    //         printf("%s\n", candidates[i].name);
-    //         printf("%i\n", candidates[i].votes);
-    //     }
     // Display winner of election
     print_winner();
 }
@@ -87,18 +80,13 @@ bool vote(string name)
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
-    // TODO
+    int max = 0;
 
-    int max;
-    for (int i = 0; i < candidate_count - 1; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[i].votes >= candidates[i + 1].votes)
+        if (candidates[i].votes > max)
         {
             max = candidates[i].votes;
-        }
-        else
-        {
-            max = candidates[i + 1].votes;
         }
     }
 
@@ -110,24 +98,4 @@ void print_winner(void)
         }
 
     }
-
-
-
-        // if (candidates[i].votes == voter_count)
-        // {
-        //     printf("Winner is %s\n", candidates[i].name);
-        // }
-        // else
-        // {
-        //     if (candidates[i].votes < voter_count & candidates[i].votes != 0)
-        //     {
-        //         if (candidates[i + 1].votes > candidates[i].votes)
-        //         {
-        //             printf("Winner is %s\n", candidates[i + 1].votes);
-        //         }
-
-        //     }
-
-        // }
-
 }
